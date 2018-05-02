@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="StarkPhone:war">
+    <output-path>$PROJECT_DIR$/../StarkPhone/target</output-path>
+    <root id="archive" name="StarkPhone.war">
+      <element id="artifact" artifact-name="StarkPhone:war exploded" />
+    </root>
+  </artifact>
+</component>
