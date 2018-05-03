@@ -51,7 +51,7 @@ public class ReceiverController {
 
     @RequestMapping("/testJpaDao")
     @ResponseBody
-    private ResultO<Person> testJpaDao(){
+    private ResultO<Person> testJpaDaos(){
         List<Person> persons = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             persons.add(new Person("name" + i, i, new Address("广州市", "天河区", i)));
