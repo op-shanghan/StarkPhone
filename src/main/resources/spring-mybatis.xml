@@ -12,21 +12,21 @@
 
     <!-- 扫描service包下所有使用注解的类型 -->
     <context:component-scan base-package="com.stark.*.*.service"/>
-
+    <context:component-scan base-package="com.stark.*.*.mongoDao"/>
     <!-- 配置数据库相关参数properties的属性：${url} -->
     <context:property-placeholder location="classpath:jdbc.properties"/>
 
     <!-- 数据库连接池 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="driverClass" value="${jdbc.driver}"/>
-        <property name="jdbcUrl" value="${jdbc.url}"/>
-        <property name="user" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
-        <property name="maxPoolSize" value="${c3p0.maxPoolSize}"/>
-        <property name="minPoolSize" value="${c3p0.minPoolSize}"/>
-        <property name="autoCommitOnClose" value="${c3p0.autoCommitOnClose}"/>
-        <property name="checkoutTimeout" value="${c3p0.checkoutTimeout}"/>
-        <property name="acquireRetryAttempts" value="${c3p0.acquireRetryAttempts}"/>
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/starkPhone?useUnicode=true&amp;characterEncoding=utf8&amp;allowMultiQueries=true"/>
+        <property name="user" value="root"/>
+        <property name="password" value=""/>
+        <property name="maxPoolSize" value="30"/>
+        <property name="minPoolSize" value="10"/>
+        <property name="autoCommitOnClose" value="false"/>
+        <property name="checkoutTimeout" value="10000"/>
+        <property name="acquireRetryAttempts" value="2"/>
     </bean>
 
     <!-- 配置SqlSessionFactory对象 -->

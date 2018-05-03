@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/data/mongo
+       http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
+">
+    <!-- 加载Mongo属性配置文件 -->
+    <context:property-placeholder location="classpath:mongo.properties"/>
+    <!-- spring链接mongo数据库配置 -->
+    <!--<mongo:mongo-client replica-set="${mongo.hostport}" id="mongo">
+        <mongo:client-options connections-per-host="${mongo.connectionsPerHost}"
+                              threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}"
+                              connect-timeout="${mongo.connectTimeout}" max-wait-time="${mongo.maxWaitTime}"
+                              socket-timeout="${mongo.socketTimeout}"/>
+    </mongo:mongo-client>-->
+    <mongo:mongo-client replica-set="127.0.0.1:27017" id="mongo">
+        <mongo:client-options connections-per-host="8"
+                              threads-allowed-to-block-for-connection-multiplier="4"
+                              connect-timeout="1000" max-wait-time="1500"
+                              socket-timeout="1500"/>
+    </mongo:mongo-client>
+    <!-- mongo工厂 通过此工厂获取mongo实例，dbname为数据库名 -->
+    <mongo:db-factory id="mongoDbFactory" dbname="starkPhone" mongo-ref="mongo"/>
+    <!-- 只要使用改模板即可调用相应方法操作 -->
+    <bean id="mongoTemplat" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+    </bean>
+    <mongo:repositories base-package="com.stark.*.*.mongoDao"/>
+
+</beans>
