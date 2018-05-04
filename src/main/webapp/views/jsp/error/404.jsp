@@ -1,12 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>404-我的技术文章</title>
+    <title>404-OP-伤寒接口站</title>
+    <base href="<%=basePath %>">
     <%-- 404-GBOOK_有趣的工具站 --%>
-    <meta name="keywords" content="日志,技术,小说,文章,有趣,工作站,工具站,util,有趣的工作站,GBOOK,BOOK,GBOOK_有趣的工具站,伤寒,Pro伤寒,296587038,肖博夷">
-    <meta name="description" content="日志,技术,小说,文章,有趣,工作站,工具站,util,有趣的工作站,GBOOK,BOOK,GBOOK_有趣的工具站,伤寒,Pro伤寒,296587038,肖博夷">
+    <meta name="keywords" content="Pro伤寒,技术,接口,util,工作站,29160047,肖博夷,Mongodb,MySql,Groovy,1877378299,18616220047">
+    <meta name="description" content="Pro伤寒,技术,接口,util,工作站,29160047,肖博夷,Mongodb,MySql,Groovy,1877378299,18616220047">
     <meta name="robots" content="all">
     <meta name="googlebot" content="all">
     <meta name="baiduspider" content="all">
