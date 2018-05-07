@@ -1,6 +1,5 @@
 package com.stark.app.tools.controller;
 
-
 import com.stark.app.tools.model.CityModel;
 import com.stark.app.tools.mongoDao.CityMongoDao;
 import com.stark.utils.result.ResultO;
@@ -9,9 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -57,6 +54,17 @@ public class RegionController {
             resultO = ResultO.lose(40000,"没有获取到数据!!!",null);
         }
         return resultO;
+    }
+
+    @CrossOrigin(origins = "*",maxAge = 3600)
+    @RequestMapping("/toCityId")
+    @ResponseBody
+    public ResultO<?> toCityId(){
+
+
+
+        return null;
+
     }
 
 

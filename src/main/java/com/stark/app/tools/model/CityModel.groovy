@@ -1,10 +1,12 @@
 package com.stark.app.tools.model
 
 import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
 
 /**
  * 城市模型
  */
+@Document(collection = "cityModel")
 class CityModel implements Serializable {
     @Id
     String id
