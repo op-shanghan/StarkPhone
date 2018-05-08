@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+<img id="shareImg" />
+<script type="text/javascript">
+    /*获取页面二维码*/
+    function share2dImg(link){
+        $("#shareImg").attr("src","/tools/barcode/createBarcode?url="+link+"&width=200&height=200")
+    }
+    $(function(){
+        /*微信分享的执行*/
+        var shareLink = "http://www.29160047.com";//分享的链接
+        share2dImg(encodeURIComponent(shareLink))//获取分享出去的二维码
+    });
+</script>
+</body>
+</html>

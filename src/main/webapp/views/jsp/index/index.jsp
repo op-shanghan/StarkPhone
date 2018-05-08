@@ -30,6 +30,8 @@
 参数:key 密文  只能为16位密文<br/>
 <a href="/tools/cipher/shaEncrypt">SHA加密接口</a>http://www.29160047.com/tools/cipher/shaEncrypt<br/>
 参数:pwd<br/>
-
+<a href="/resources/html/barcode.html">二维码生成页面(静态页面)</a>http://www.29160047.com/resources/html/barcode.html<br/>
+二维码生成页面 参数: url
+访问地址:http://www.29160047.com//tools/barcode
 </body>
 </html>
