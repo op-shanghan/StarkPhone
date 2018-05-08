@@ -24,7 +24,7 @@ public class CipherController {
     @RequestMapping("/aesGenerator")
     @ResponseBody
     public ResultO<?> aesGenerator(String pwd,String key){
-        if(key.length() == 16){
+        if(key.length() == 16 && null != pwd && pwd.replaceAll(" ","").length()>0){
             return ResultO.success("加密成功!!!",CipherEcology.aesEncrypt(pwd,key),null);
         }
         return ResultO.lose(50000,"加密失败，密钥需为16位字符串!!!",null);
@@ -40,7 +40,7 @@ public class CipherController {
     @RequestMapping("/aesParser")
     @ResponseBody
     public ResultO<?> aesParser(String pwd,String key){
-        if(key.length() == 16){
+        if(key.length() == 16 && null != pwd && pwd.replaceAll(" ","").length()>0){
             return ResultO.success("解密成功!!!",CipherEcology.aesDecrypt(pwd,key),null);
         }
         return ResultO.lose(50000,"解密失败，密钥需为16位字符串!!!",null);
@@ -55,11 +55,14 @@ public class CipherController {
     @RequestMapping("/shaEncrypt")
     @ResponseBody
     public ResultO<?> shaEncrypt(String pwd){
-        String sha = CipherEcology.shaEncrypt(pwd);
-        if(null != sha){
-            return ResultO.success("解密成功!!!",sha,null);
+        if(null != pwd && pwd.replaceAll(" ","").length()>0){
+            String sha = CipherEcology.shaEncrypt(pwd);
+            if(null != sha){
+                return ResultO.success("解密成功!!!",sha,null);
+            }
+            return ResultO.lose(50000,"加密失败!!!",null);
         }
-        return ResultO.lose(50000,"加密失败!!!",null);
+        return ResultO.lose(50000,"加密失败,密码不能为空!!!",null);
     }
 
 
