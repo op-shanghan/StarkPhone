@@ -22,5 +22,14 @@
 <a href="/tools/region/getRegions">获取所有城市一级地区接口</a>http://www.29160047.com/tools/region/getRegions<br/>
 <a href="/tools/region/getRegions/110000">获取所有子级地区接口</a>http://www.29160047.com/tools/region/getRegions/{cityId}<br/>
 <a href="/tools/md5/toMD5">MD5加密接口&nbsp;参数: psd | string&nbsp; psd 被加密字符串 </a>http://www.29160047.com/tools/md5/toMD5<br/>
+<a href="/tools/cipher/aesGenerator">AES加密接口</a>http://www.29160047.com/tools/cipher/aesGenerator<br/>
+参数:pwd 需要加密的密码<br/>
+参数:key 密文  只能为16位密文<br/>
+<a href="/tools/cipher/aesParser">AES解密接口</a>http://www.29160047.com/tools/cipher/aesParser<br/>
+参数:pwd 需要解密的AES加密后密文<br/>
+参数:key 密文  只能为16位密文<br/>
+<a href="/tools/cipher/shaEncrypt">SHA加密接口</a>http://www.29160047.com/tools/cipher/shaEncrypt<br/>
+参数:pwd<br/>
+
 </body>
 </html>
