@@ -53,6 +53,7 @@ public class CipherController {
      */
     @CrossOrigin(origins = "*",maxAge = 3600)
     @RequestMapping("/shaEncrypt")
+    @ResponseBody
     public ResultO<?> shaEncrypt(String pwd){
         String sha = CipherEcology.shaEncrypt(pwd);
         if(null != sha){
