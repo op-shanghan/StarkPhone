@@ -2,11 +2,18 @@ package com.stark.app.tools.logic;
 
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
+/**
+ * 密码加密逻辑
+ */
 public class CipherEcology {
     private static final String AES = "AES";
 
-    private static final String CRYPT_KEY = "Bb2965EVX894260Z";
+    //private static final String CRYPT_KEY = "Bb2965EVX894260Z";
 
     /**
      * 加密
@@ -72,7 +79,7 @@ public class CipherEcology {
      * @return
      * @throws Exception
      */
-    public final static String aesDecrypt(String data) {
+    public final static String aesDecrypt(String data,String CRYPT_KEY) {
         try {
             return new String(decrypt(hex2byte(data.getBytes()),
                     CRYPT_KEY));
@@ -88,7 +95,7 @@ public class CipherEcology {
      * @return
      * @throws Exception
      */
-    public final static String aesEncrypt(String data) {
+    public final static String aesEncrypt(String data,String CRYPT_KEY) {
         try {
             return byte2hex(encrypt(data.getBytes(), CRYPT_KEY));
         } catch (Exception e) {
@@ -96,12 +103,21 @@ public class CipherEcology {
         return null;
     }
 
-
-    public static void main(String[] args) {
-        String idEncrypt = aesEncrypt("private static final String AES = \"AES\";");
-        System.out.println(idEncrypt);
-        String idDecrypt = aesDecrypt(idEncrypt);
-        System.out.println(idDecrypt);
+    /**
+     * SHA 加密
+     * @param inputStr
+     * @return
+     */
+    public static  String  shaEncrypt(String inputStr)
+    {
+        BigInteger sha =null;
+        byte[] inputData = inputStr.getBytes();
+        try {
+            MessageDigest messageDigest = MessageDigest.getInstance("SHA");
+            messageDigest.update(inputData);
+            sha = new BigInteger(messageDigest.digest());
+        } catch (Exception e) {e.printStackTrace();}
+        return sha.toString(32);
     }
 
 }
