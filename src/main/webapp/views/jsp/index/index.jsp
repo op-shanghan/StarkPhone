@@ -10,8 +10,8 @@
     <title>404-OP-伤寒接口站</title>
     <base href="<%=basePath %>">
     <%-- 404-GBOOK_有趣的工具站 --%>
-    <meta name="keywords" content="Pro伤寒,技术,接口,util,工作站,29160047,肖博夷,Mongodb,MySql,Groovy,1877378299,18616220047">
-    <meta name="description" content="Pro伤寒,技术,接口,util,工作站,29160047,肖博夷,Mongodb,MySql,Groovy,1877378299,18616220047">
+    <meta name="keywords" content="Pro伤寒,技术,接口,util,工作站,29160047,Mongodb,MySql,Groovy,1877378299,18616220047">
+    <meta name="description" content="Pro伤寒,技术,接口,util,工作站,29160047,Mongodb,MySql,Groovy,1877378299,18616220047">
     <meta name="robots" content="all">
     <meta name="googlebot" content="all">
     <meta name="baiduspider" content="all">
@@ -33,5 +33,7 @@
 <a href="/resources/html/barcode.html">二维码生成页面(静态页面)</a>http://www.29160047.com/resources/html/barcode.html<br/>
 二维码生成页面 参数: url
 访问地址:http://www.29160047.com//tools/barcode
+<h4>社区联系方式:QQ 29160047  ||   1877378299</h4>
+<h4>百度贴吧: Pro伤寒接口社区</h4>
 </body>
 </html>
