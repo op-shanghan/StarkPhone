@@ -64,6 +64,4 @@ public class CipherController {
         }
         return ResultO.lose(50000,"加密失败,密码不能为空!!!",null);
     }
-
-
 }
